@@ -36,12 +36,18 @@ public interface MQConsumerInner {
 
     ConsumeFromWhere consumeFromWhere();
 
+    //返回当前client订阅的topic和tags相关信息
     Set<SubscriptionData> subscriptions();
 
     void doRebalance();
 
     void persistConsumerOffset();
 
+    /**
+     * 更新topic下的MessageQueue信息，保存到rebalanceImpl中
+     * @param topic
+     * @param info
+     */
     void updateTopicSubscribeInfo(final String topic, final Set<MessageQueue> info);
 
     boolean isSubscribeTopicNeedUpdate(final String topic);

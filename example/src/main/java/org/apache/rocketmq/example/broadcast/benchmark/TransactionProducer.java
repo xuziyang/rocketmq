@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.rocketmq.example.benchmark;
+package org.apache.rocketmq.example.broadcast.benchmark;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Option;

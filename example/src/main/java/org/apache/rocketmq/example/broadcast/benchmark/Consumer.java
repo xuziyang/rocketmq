@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.rocketmq.example.benchmark;
+package org.apache.rocketmq.example.broadcast.benchmark;
 
 import java.util.concurrent.atomic.LongAdder;
 import org.apache.commons.cli.CommandLine;
