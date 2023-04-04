@@ -272,7 +272,7 @@ public class MQClientInstance {
                 }
             }, 1000 * 10, 1000 * 60 * 2, TimeUnit.MILLISECONDS);
         }
-        //
+        // 30秒一次，从nameServer更新Topic元数据
         this.scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
 
             @Override

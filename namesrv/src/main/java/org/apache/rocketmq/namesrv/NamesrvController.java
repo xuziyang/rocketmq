@@ -84,8 +84,10 @@ public class NamesrvController {
 
         this.registerProcessor();
 
+        // 开启定时任务：每隔10s，扫描一次下线的broker
         this.scheduledExecutorService.scheduleAtFixedRate(NamesrvController.this.routeInfoManager::scanNotActiveBroker, 5, 10, TimeUnit.SECONDS);
 
+        // 开启定时任务：每10分钟，打印一次KV配置
         this.scheduledExecutorService.scheduleAtFixedRate(NamesrvController.this.kvConfigManager::printAllPeriodically, 1, 10, TimeUnit.MINUTES);
 
         if (TlsSystemConfig.tlsMode != TlsMode.DISABLED) {

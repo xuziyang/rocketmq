@@ -465,6 +465,7 @@ public class RouteInfoManager {
         return null;
     }
 
+    // 超过120s，没有收到broker心跳，则认为失效
     public int scanNotActiveBroker() {
         int removeCount = 0;
         Iterator<Entry<String, BrokerLiveInfo>> it = this.brokerLiveTable.entrySet().iterator();
