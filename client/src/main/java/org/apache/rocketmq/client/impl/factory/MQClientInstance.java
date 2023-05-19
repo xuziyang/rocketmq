@@ -284,7 +284,7 @@ public class MQClientInstance {
                 }
             }
         }, 10, this.clientConfig.getPollNameServerInterval(), TimeUnit.MILLISECONDS);
-        // 向所有的broker发送心跳
+        // 30秒一次, 向所有的broker发送心跳,
         this.scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
 
             @Override
@@ -297,7 +297,7 @@ public class MQClientInstance {
                 }
             }
         }, 1000, this.clientConfig.getHeartbeatBrokerInterval(), TimeUnit.MILLISECONDS);
-        // 持久化 offset
+        // 5秒一次，持久化 offset
         this.scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
 
             @Override
